@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import Searchbar from './Searchbar/Searchbar';
+import { Searchbar } from './Searchbar/Searchbar';
 import { Loader } from './Loader/Loader';
 import { LoadMore } from './Button/Button';
 import { ImagesGallery } from './ImageGallery/ImageGallery';
-import Modal from './Modal/Modal';
+import { Modal } from './Modal/Modal';
 import { ModalImg } from './App.styled';
 
 const API_KEY = '29601825-65f79e377599d679ceb963779';
@@ -75,7 +75,10 @@ class App extends React.Component {
         )}
         {this.state.showModal && (
           <Modal closeModal={this.toggleModal}>
-            <ModalImg src={this.getModalImage().largeImageURL} alt="" />
+            <ModalImg
+              src={this.getModalImage().largeImageURL}
+              alt={this.getModalImage().tags}
+            />
           </Modal>
         )}
       </div>
